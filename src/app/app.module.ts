@@ -6,6 +6,10 @@ import { HttpModule } from '@angular/http';
 //routing
 import { APP_ROUTING } from "./authapp.routes";
 
+//services
+import { Auth } from "./services/auth.service";
+import { AuthGuardService } from "./services/auth-guard.service";
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
@@ -26,7 +30,10 @@ import { ProtegidaComponent } from './components/protegida/protegida.component';
     HttpModule,
     APP_ROUTING 
   ],
-  providers: [],
+  providers: [
+    Auth,
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
